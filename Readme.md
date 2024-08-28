@@ -12,6 +12,10 @@ Shell scripts download the data automatically from the cloud, R codes prepare th
 
 This produces tables.tex, which can be compiled with pdflatex. 
 
+
+
+The second and third folders analyze the data of LaCour Pavlov Wachter and find evidence of failed joins, and arbitrary data deletion and padding. The folders download data automatically from the RFS Dataverse.
+
 > 02_evidence_of_data_errors_in_LPW_2024
 
 This downloads the RFS Dataverse of August 2023 for LaCour Pavlov Wachter (2024) and shows that:
