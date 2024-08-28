@@ -1,10 +1,16 @@
 # Ouazad and Kahn (2022) and the LLPW (2024) Comment
 
+> Ouazad, A. and Kahn, M.E., 2022. Mortgage finance and climate change: Securitization dynamics in the aftermath of natural disasters. The Review of Financial Studies, 35(8), pp.3617-3665.
+
 This repository provides three folders. 
 
 > 01_reproduction_of_ouazad_and_kahn
 
-This downloads the data from the cloud using shell scripts, prepare the data, runs the fixed effect regression identical to Ouazad and Kahn (2022) specification 1, using the conforming loan limits from FHFA. This produces tables.tex, which can be compiled with pdflatex. 
+This runs the fixed effect regression identical to Ouazad and Kahn (2022) specification 1, using the conforming loan limits from FHFA.
+
+Shell scripts download the data automatically from the cloud, R codes prepare the data, and run the regression.
+
+This produces tables.tex, which can be compiled with pdflatex. 
 
 > 02_evidence_of_data_errors_in_LPW_2024
 
