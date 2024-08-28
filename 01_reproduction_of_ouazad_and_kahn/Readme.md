@@ -1,18 +1,9 @@
 
 # Replication of Ouazad and Kahn (2022) 
 
-The first step is to download the data.
+The first step is to download the data using one of the three shell scripts. You can then execute the R scripts. If you use download_estimation_samples.sh, you can go straight to 06_main_regression.R, which generates the regression tables.
 
-The folder limits/ has the conforming loan limits.
-
-The folder hmda/ stores the raw HMDA files. If you want to build the sample from raw HMDA data, use the script download_raw_hmda.sh and execute the files in sequence of their number.
-
-The folder external_data/ has data providing additional variables. 
-
-The folder output/ stores intermediary files, such as the estimation sample.
-
-The folder tables/ and the folder figures/ store the code's output, automatically generated in 06_main_regression.R.
-
+## Files
 
 > 00_1_prepare_limits_by_county.R 
  
@@ -52,6 +43,19 @@ impact_conforming_market.tex for windows +-20%, +-10%, +-5% around the conformin
 
 impact_conforming_market_narrower.tex for windows +-4%, +-3%, +-2% around the conforming loan limit.
 
+## Folders
+
+The folder limits/ has the conforming loan limits.
+
+The folder hmda/ stores the raw HMDA files. If you want to build the sample from raw HMDA data, use the script download_raw_hmda.sh and execute the files in sequence of their number.
+
+The folder external_data/ has data providing additional variables. 
+
+The folder output/ stores intermediary files, such as the estimation sample.
+
+The folder tables/ and the folder figures/ store the code's output, automatically generated in 06_main_regression.R.
+
+## Packages
 
 
 To execute this, you need to have the following packages on your system: tidyverse (2.0.0), fixest (0.11.2), broom (1.0.5), foreign (0.8.86), data.table (1.15.0), gam (1.22.3), lfe (3.0.0), gplots (3.1.3.1). These are available on CRAN and can be installed in R using install.packages. 
