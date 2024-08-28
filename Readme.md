@@ -14,7 +14,7 @@ This produces tables.tex, which can be compiled with pdflatex.
 
 
 
-The second and third folders analyze the data of LaCour Pavlov Wachter and find evidence of failed joins, and arbitrary data deletion and padding. The folders download data automatically from the RFS Dataverse.
+The second and third folders analyze the data of LLPW (2024) and find evidence of failed joins, and arbitrary data deletion and padding. The folders download data automatically from the RFS Dataverse.
 
 > 02_evidence_of_data_errors_in_LLPW_2024
 
@@ -25,7 +25,7 @@ This downloads the RFS Dataverse of August 2023 for LLPW (2024) and shows that:
 
 > 03_flaws_in_the_independent_replication_table_8
 
-This relies on an archive provided by AP, shared with us in April 2023. The RFS Dataverse of LLPW does not include the code for Table 8, so we rely on this archive. The folder automatically downloads the Pavlov archive and performs integrity checks. The code shows that the time dummies are not mutually exclusive and that the hurricane treatment years are miscoded.
+This relies on an archive provided by AP, shared with us in April 2023. The RFS Dataverse of LLPW (2024) does not include the code for Table 8, so we rely on this archive. The folder automatically downloads the AP (2023) archive and performs integrity checks. The code shows that the time dummies are not mutually exclusive and that the hurricane treatment years are miscoded.
 
 Each folder generates a pdf in tables.pdf.
 
