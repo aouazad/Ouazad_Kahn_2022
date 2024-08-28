@@ -19,7 +19,7 @@ breaklines=true
 
 \begin{figure}
     
-    \caption{Density of the Observations Excluded by LaCour Pavlov Wachter (2024)}
+    \caption{Density of the Observations Excluded by LLPW (2024)}
 
     \begin{center}
         \includegraphics[scale=0.5]{figures/density_diff_log_loan_amount_excluded_ZIPs.pdf}
@@ -34,7 +34,7 @@ breaklines=true
 
 \begin{table}
 
-\caption{Code that Performs Arbitrary Manipulations of the Data, Present in LPW (2024) but not in OK (2022)}
+\caption{Code that Performs Arbitrary Manipulations of the Data, Present in LLPW (2024) but not in OK (2022)}
 
 \bigskip
 
@@ -42,7 +42,7 @@ breaklines=true
 
 \bigskip
 
-Code that excludes arbitrary ZIP codes on lines 140 to 143 in the RFS Dataverse code of LPW (2024), version 1,
+Code that excludes arbitrary ZIP codes on lines 140 to 143 in the RFS Dataverse code of LLPW (2024), version 1,
 posted in August 2023, file \texttt{02\_generateRegressionSample.m}.
 
 {%\footnotesize
@@ -59,7 +59,7 @@ joinedTableCombined(ismember(joinedTableCombined.ZCTA5CE10,exclZips.ZCTA5CE10),:
 
 \bigskip
 
-Code that duplicates arbitrary counties on lines 129 to 131 in the RFS Dataverse code of LPW (2024) version 1,
+Code that duplicates arbitrary counties on lines 129 to 131 in the RFS Dataverse code of LLPW (2024) version 1,
 posted in August 2023, file \texttt{02\_generateRegressionSample.m}.
 
 {\footnotesize
@@ -75,7 +75,7 @@ joinedTableCombined = [joinedTableCombined;duplicateObs1;duplicateObs2];
 
 \bigskip
 
-Code that excludes an arbitrary lender on line 134 in the RFS Dataverse code of LPW (2024) version 1,
+Code that excludes an arbitrary lender on line 134 in the RFS Dataverse code of LLPW (2024) version 1,
 posted in August 2023, file \texttt{02\_generateRegressionSample.m}.
 
 {\footnotesize

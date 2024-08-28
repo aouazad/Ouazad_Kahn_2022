@@ -8,7 +8,7 @@ library(tidylog)
 
 originated_05 <- read_csv("downloads/Climate Risk Replication/originated_05_CT_treatment.csv", guess_max = 500000)
 
-# these lines from the LaCour data archive
+# these lines from the AP (2023) data archive
 # 
 # %%%%%%%%%%%%%%%
 #originated_05$as_of_year.f <- factor(originated_05$as_of_year)

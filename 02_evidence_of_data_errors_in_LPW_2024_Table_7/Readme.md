@@ -2,9 +2,7 @@
 
 ## Description
 
-This code downloads the RFS Dataverse archive for:
-
-> Lacour-Little, Michael, Andrey D. Pavlov, and Susan M. Wachter. "Adverse selection and climate risk: A response to Ouazad and Kahn (2022)."
+This code downloads the RFS Dataverse archive for LLPW (2024).
 
 It shows that the code has a hardcoded script that manipulates the data in 3 ways not performed by Ouazad and Kahn (2022). First, it excludes a selected set of ZIP codes that are part of the treatment group. ZIP codes excluded include areas in Southern Louisiana affected by Hurricane Katrina, and areas of Miami, Florida, affected by multiple hurricanes during the time period.  Second, it hardcodes the duplication of observations from selected counties. Third, it hardcodes the removal 
 of a specific lender. 
@@ -29,7 +27,7 @@ Step 1: Install 7-zip that is needed to decompress the RFS Dataverse files of LP
 
 Step 2: Run the scripts download_LPW_RFS_Dataverse.sh and download_OK_RFS_Dataverse.sh, which automatically download the *official* files.
 
-The RFS Dataverse of LPW was posted in August 2023. The RFS Dataverse of OK was posted in December 2021.
+The RFS Dataverse of LLPW was posted in August 2023. The RFS Dataverse of OK was posted in December 2021.
 
 Step 3: Run 01_evidence_of_excluded_ZIPs_in_LPW.R. Read the output.
 

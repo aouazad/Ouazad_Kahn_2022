@@ -1,14 +1,10 @@
 
 # Flaws in the independent replication, Table 8 of the comment
 
-The comment:
-
-> LaCour-Little, M., Pavlov, A. and Wachter, S., 2024. Adverse Selection and Climate Risk: A Response to. The Review of Financial Studies, 37(6), pp.1831-1847.
-
-displays a Table 8 that suggests an independent replication.
+The LLPW (2024) comment displays a Table 8 that suggests an independent replication.
 
 This independent replication has not been made available to the readers of the Review of Financial Studies,
-but we thank A. Pavlov for sharing with us a ZIP link to the data archive.
+but we thank AP for sharing with us a ZIP link to the data archive.
 
 We store this archive at the URL https://www.dropbox.com/scl/fi/bsy3vho7dvvh23lwdg5zz/lacour_little_data_archive_initial_submission.zip?rlkey=tznr0xbeuelipjvalvio2hir0&st=idejl55x&dl=0 for your convenience. This is automatically downloaded by the script download_independent_replication.sh
 

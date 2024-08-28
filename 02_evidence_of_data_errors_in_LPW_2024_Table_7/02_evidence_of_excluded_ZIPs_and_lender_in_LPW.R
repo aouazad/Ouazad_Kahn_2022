@@ -1,6 +1,4 @@
-# This scripts presents evidence that in the replication code of
-#  Lacour-Little, Michael, Andrey D. Pavlov, and Susan M. Wachter. 
-#  "Adverse selection and climate risk: A response to Ouazad and Khan (2022)."
+# This scripts presents evidence that in the replication code of LLPW (2024)
 # a *hardcoded* list of ZIP codes was excluded from the analysis
 # These ZIP codes are important: they are part of the treatment group.
 #
@@ -85,7 +83,7 @@ dfok_2022 %>%
                         "Yes", "No"),
          `Hurricane in OK (2022)` = gsub("_", " ", 
                                         `Hurricane in OK (2022)`, fixed = TRUE)) %>%
-  xtable(caption = "Lists of ZIP codes excluded manually by LPW on lines 140-143 of 02\\_generateRegressionSample.m",
+  xtable(caption = "Lists of ZIP codes excluded manually by LLPW on lines 140-143 of 02\\_generateRegressionSample.m",
          align = c("l", "c", "c", "c", "c")) %>%
   print(type = "latex", include.rownames = FALSE,
         floating = FALSE) %>%
@@ -104,7 +102,7 @@ summary(dfok_2022$diff_log_loan_amount[!(dfok_2022$ZCTA5CE10 %in% excluded_ZIPs)
     mutate(Sample = ifelse(Sample == "1", 
                               "Excluded ZIPs", "Rest of the sample")) %>%
     # print the table
-  xtable(caption = "Summary statistics of log(loan amount) - Conforming Limit for the ZIPs wrongly excluded by LPW and the rest of the sample",
+  xtable(caption = "Summary statistics of log(loan amount) - Conforming Limit for the ZIPs wrongly excluded by LLPW and the rest of the sample",
          # align the columns as lcccccc
          align = c("l", "l", "c", "c", "c", "c", "c", "c")
          ) %>%
