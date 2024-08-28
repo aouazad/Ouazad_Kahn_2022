@@ -1,0 +1,37 @@
+\documentclass{article}
+
+\usepackage{graphicx}
+\usepackage[margin=1in]{geometry}
+\usepackage{listings}
+\lstset{
+basicstyle=\small\ttfamily,
+columns=flexible,
+breaklines=true
+}
+\usepackage{hyperref}
+\usepackage{caption, subcaption}
+
+\begin{document}
+
+\begin{table}
+
+    \caption{The Time Dummies are Non-Mutually Exclusive in the Independent Replication, Table 8 of LLPW}
+
+\begin{center}
+\input{tables/non_mutually_exclusive_time_dummies.tex}
+\end{center}
+
+\end{table}
+
+\begin{table}
+
+    \caption{The Hurricane Treatment Years are Incorrectly Coded in the Independent Replication, Table 8 of LLPW}
+
+\begin{center}
+\input{tables/incorrect_treatment_years.tex}
+\end{center}
+
+\end{table}
+
+
+\end{document}

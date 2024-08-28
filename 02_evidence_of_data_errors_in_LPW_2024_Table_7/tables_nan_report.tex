@@ -1,0 +1,93 @@
+\documentclass{article}
+
+\usepackage{graphicx}
+\usepackage[margin=1in]{geometry}
+\usepackage{listings}
+\lstset{
+basicstyle=\small\ttfamily,
+columns=flexible,
+breaklines=true
+}
+\usepackage{hyperref}
+\usepackage{caption, subcaption}
+\captionsetup[subfigure]{justification=centering}
+
+\begin{document}
+
+\begin{table}
+
+\caption{Values of the High Cost County Dummy Variable Across Data Sets}
+
+\begin{center}
+\input{tables/comparison_of_high_cost_dummy_values.tex}
+\end{center}
+
+\end{table}
+
+\begin{table}
+
+    \caption{LPW Table 7 -- Values of the High Cost County Dummy Variable By Action Taken}
+    
+    \begin{center}
+    \input{tables/nans_in_high_cost_dummy_by_action_taken.tex}
+    \end{center}
+    
+\end{table}
+
+\begin{table}
+
+    \caption{LPW Table 7 -- Values of the High Cost County Dummy Variable By State}
+    
+    \begin{center}
+    \input{tables/nans_in_high_cost_dummy_by_state.tex}
+    \end{center}
+    
+\end{table}
+
+\clearpage
+\pagebreak
+
+
+\begin{figure}
+
+    \caption{LPW Table 7 --  NaNs in the High Cost County Dummy Variable Bunch at the Conforming Loan Limit}
+    
+    \begin{center}
+    \includegraphics[scale=0.5]{figures/nans_in_high_cost_dummy_bunching.pdf}
+    \end{center}
+    
+\end{figure}
+
+\clearpage
+\pagebreak
+
+\begin{figure}
+
+    \caption{LPW Table 7 --  NaNs in the High Cost County Dummy Variable Are Present in Multiple Counties}
+    
+    \begin{subfigure}{0.9\textwidth}
+    \caption{Florida}
+    \begin{center}
+    \includegraphics[scale=0.45]{figures/nans_in_high_cost_dummy_12.pdf}
+    \end{center}
+    \end{subfigure}
+
+    \begin{subfigure}{0.9\textwidth}
+        \caption{Louisiana}
+        \begin{center}
+        \includegraphics[scale=0.45]{figures/nans_in_high_cost_dummy_22.pdf}
+        \end{center}
+    \end{subfigure}
+
+    \begin{subfigure}{0.9\textwidth}
+
+        \caption{North Carolina}
+        \begin{center}
+            \includegraphics[scale=0.45]{figures/nans_in_high_cost_dummy_37.pdf}
+            \end{center}
+    \end{subfigure}
+        
+\end{figure}
+
+
+\end{document}

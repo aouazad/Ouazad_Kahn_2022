@@ -1,0 +1,144 @@
+\documentclass{article}
+
+\usepackage{rotating}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{caption, subcaption}
+\usepackage{hyperref}
+
+\begin{document}
+
+\begin{sidewaystable}
+
+\caption{Replication of Ouazad and Kahn (2022) using the LLPW Suggested Data Cleaning Rules}
+
+\begin{center}
+\input{01_reproduction_of_ouazad_and_kahn/tables/impact_conforming_market.tex}
+\end{center}
+
+\end{sidewaystable}
+
+\clearpage
+\pagebreak
+
+\begin{sidewaystable}
+
+\caption{Replication of Ouazad and Kahn (2022) – Narrower Window}
+\input{01_reproduction_of_ouazad_and_kahn/tables/impact_conforming_market_narrower.tex}
+
+\begin{center}
+
+\end{center}
+
+\end{sidewaystable}
+
+\clearpage
+\pagebreak
+
+\begin{table}
+
+\caption{NaN values for the 'high cost' Dummy Variable: Only in the Sample for LLPW Table 7}
+
+\emph{This Figure analyzes the 'high\_cost' variable in Ouazad and Kahn (2022) (named highcost), in the sample for Table 5 of LLPW, in the sample Table 7 of LLPW. This is verifiable in the RFS Dataverse of LLPW posted in August 2023 and the RFS Dataverse of Ouazad and Kahn (2022) posted in December 2021. In LLPW, the 'high\_cost' variable is a key part of the match of the sample with high cost conforming loan limits.}
+
+\begin{center}
+\input{02_evidence_of_data_errors_in_LPW_2024_Table_7/tables/comparison_of_high_cost_dummy_values.tex}
+\end{center}
+
+\emph{NaN values appear in the sample for Table 7. This is the Table that does not find the results of Ouazad and Kahn (2022).}
+
+\end{table}
+
+\begin{table}
+\caption{LLPW Table 7 -- NaN values for the 'high cost' Dummy Variable, by Action Taken}
+
+\emph{This Figure analyzes the 'high\_cost' variable of the sample for Table 7 of LLPW. This is verifiable in the RFS Dataverse of LLPW. The 'high\_cost' variable is a key part of the match of the sample with high cost conforming loan limits.}
+
+\begin{center}
+\input{02_evidence_of_data_errors_in_LPW_2024_Table_7/tables/nans_in_high_cost_dummy_by_action_taken.tex}
+\end{center}
+
+\end{table}
+
+\begin{table}
+\caption{LLPW Table 7 -- NaN values for the 'high cost' Dummy Variable by State}
+\begin{center}
+\input{02_evidence_of_data_errors_in_LPW_2024_Table_7/tables/nans_in_high_cost_dummy_by_state.tex}
+\end{center}
+    
+\end{table}
+
+\clearpage
+\pagebreak
+
+\begin{figure}
+    
+\caption{LLPW Table 7 -- NaN values for the 'high cost' Dummy Variable Bunch at the Conforming Loan Limit}
+
+\emph{This Figure analyzes the presence of NaNs in the 'high\_cost' variable of the sample for Table 7 of LLPW. This is verifiable in the RFS Dataverse of LLPW. In LLPW, the 'high\_cost' variable is a key part of the match of the sample with high cost conforming loan limits.}
+
+\begin{center}
+\includegraphics[scale = 0.5]{02_evidence_of_data_errors_in_LPW_2024_Table_7/figures/nans_in_high_cost_dummy_bunching.pdf}
+\end{center}
+
+\end{figure}
+
+\clearpage
+\pagebreak
+
+\begin{table}
+    
+\caption{ZIPs Arbitrarily Excluded in the RFS Dataverse Code of LLPW (2024) Are Present in Ouazad and Kahn (2022)} 
+
+Lines 140--143 of the 02\_generateRegressionSample.m of LLPW arbitrarily exclude 20 ZIP codes. The code claims that these ZIP codes are excluded in Ouazad and Kahn (2022). The RFS Dataverse of Ouazad and Kahn (2022) dated December 6, 2021, shows that these observations are present in the sample and are part of the treatment group. Column 4 shows which hurricane hit the ZIP code in Ouazad and Kahn's (2022) sample.
+
+\bigskip
+
+\begin{center}
+    \input{02_evidence_of_data_errors_in_LPW_2024_Table_7/tables/excluded_ZIPs_in_treatment_group.tex}
+\end{center}
+
+\bigskip
+
+The table below shows the average distance (in logs) to the conforming loan limit of the loans in these excluded ZIPs. These ZIPs are more likely to have conforming loans.
+
+\bigskip
+
+\begin{center}
+    \input{02_evidence_of_data_errors_in_LPW_2024_Table_7/tables/summary_diff_log_loan_amount_excluded_ZIPs.tex}
+\end{center}
+
+\end{table}
+
+\clearpage
+\pagebreak
+
+\begin{table}
+\caption{The Independent Replication of LLPW, Table 8, has Non-Mutually Exclusive Time Dummies}
+
+\emph{The independent replication package (not Tables 5--7) was accessed in April 2023 and is stored on our cloud at \url{https://tinyurl.com/yy7s7b9c}. Since the RFS Dataverse of LLPW does not include the code for Table 8, we assume this is consistent with it. This table presents, for the treatment group only, the sum of the indicator variables for the number of years relative to the hurricane. In a well-designed event study, each treated observation should have only one time dummy variable equal to 1. Except for the reference time period (e.g. $-1$). In contrast, in the independent replication, more than 93,000 observations are in the treatment but have no corresponding time dummy. And more than 6,200 observations have multiple time dummies equal to 1 at the same time. There is no dummy variable for times before $-4$ and no dummy variable for times after $+4$. }
+
+\begin{center}
+\input{03_flaws_in_the_independent_replication_table_8/tables/non_mutually_exclusive_time_dummies_formatted.tex}
+\end{center}
+
+\emph{We rely on an archive shared by A. Pavlov in early 2023.}
+
+\end{table}
+
+\begin{table}
+\caption{The Independent Replication of LLPW, Table 8, has an Incorrect Coding of Hurricane Treatment Years}
+
+\emph{This table presents the analysis of the file “originated\_05\_CT\_treatment.csv” provided by the LaCour-Little coauthorship team. This file is used in the main regression of their paper, titled “run\_regressions.R.” The independent replication package (not Tables 5--7) was accessed in April 2023 and is stored on our cloud at \url{https://tinyurl.com/yy7s7b9c}.}
+
+\begin{center}
+\input{03_flaws_in_the_independent_replication_table_8/tables/incorrect_treatment_years_formatted.tex}
+\end{center}
+
+\emph{We rely on an archive shared by A. Pavlov in early 2023.}
+
+\end{table}
+
+
+\end{document}
+

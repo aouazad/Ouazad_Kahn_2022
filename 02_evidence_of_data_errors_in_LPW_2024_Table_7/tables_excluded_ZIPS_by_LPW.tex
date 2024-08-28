@@ -1,0 +1,92 @@
+\documentclass{article}
+
+\usepackage{graphicx}
+\usepackage[margin=1in]{geometry}
+\usepackage{listings}
+\lstset{
+basicstyle=\small\ttfamily,
+columns=flexible,
+breaklines=true
+}
+\usepackage{hyperref}
+
+\begin{document}
+
+\input{tables/excluded_ZIPs_in_treatment_group.tex}
+
+\clearpage
+\pagebreak
+
+\begin{figure}
+    
+    \caption{Density of the Observations Excluded by LaCour Pavlov Wachter (2024)}
+
+    \begin{center}
+        \includegraphics[scale=0.5]{figures/density_diff_log_loan_amount_excluded_ZIPs.pdf}
+    \end{center}
+
+\end{figure}
+
+\input{tables/summary_diff_log_loan_amount_excluded_ZIPs.tex}
+
+\clearpage
+\pagebreak
+
+\begin{table}
+
+\caption{Code that Performs Arbitrary Manipulations of the Data, Present in LPW (2024) but not in OK (2022)}
+
+\bigskip
+
+\textbf{Code Evidence \#1:}
+
+\bigskip
+
+Code that excludes arbitrary ZIP codes on lines 140 to 143 in the RFS Dataverse code of LPW (2024), version 1,
+posted in August 2023, file \texttt{02\_generateRegressionSample.m}.
+
+{%\footnotesize
+\begin{lstlisting}
+opts = detectImportOptions('excluded_ZIPs.xlsx');                                      
+opts = setvartype(opts,'ZCTA5CE10','char');                                            
+exclZips = readtable('excluded_ZIPs.xlsx',opts);                                       
+joinedTableCombined(ismember(joinedTableCombined.ZCTA5CE10,exclZips.ZCTA5CE10),:) = [];
+\end{lstlisting}}
+
+\bigskip
+
+\textbf{Code Evidence \#2:}
+
+\bigskip
+
+Code that duplicates arbitrary counties on lines 129 to 131 in the RFS Dataverse code of LPW (2024) version 1,
+posted in August 2023, file \texttt{02\_generateRegressionSample.m}.
+
+{\footnotesize
+\begin{lstlisting}
+duplicateObs1 = joinedTableCombined(strcmp(joinedTableCombined.state_code,'24')&strcmp(joinedTableCombined.county_code,'510'),:);
+duplicateObs2 = joinedTableCombined(strcmp(joinedTableCombined.state_code,'51')&strcmp(joinedTableCombined.county_code,'600'),:);
+joinedTableCombined = [joinedTableCombined;duplicateObs1;duplicateObs2];
+\end{lstlisting}}
+
+\bigskip
+
+\textbf{Code Evidence \#3:}
+
+\bigskip
+
+Code that excludes an arbitrary lender on line 134 in the RFS Dataverse code of LPW (2024) version 1,
+posted in August 2023, file \texttt{02\_generateRegressionSample.m}.
+
+{\footnotesize
+\begin{lstlisting}
+joinedTableCombined(strcmp(joinedTableCombined.respondent_id,'41-1795868')&joinedTableCombined.as_of_year==2014,:) = [];
+\end{lstlisting}}
+
+\bigskip
+
+This code can be downloaded at the RFS Dataverse, permanent DOI \url{https://doi.org/10.7910/DVN/ABVAYZ}.
+
+\end{table}
+
+\end{document}

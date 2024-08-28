@@ -1,0 +1,33 @@
+\documentclass{article}
+
+\usepackage{rotating}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{caption, subcaption}
+
+\begin{document}
+
+\begin{sidewaystable}
+    
+\caption{Results -- Windows of 20, 10, 5\%}
+
+\begin{center}
+\input{tables/impact_conforming_market.tex}
+\end{center}
+
+\end{sidewaystable}
+
+\clearpage
+\pagebreak
+
+\begin{sidewaystable}
+    
+    \caption{Results -- Narrower Windows of 4, 3, 2\%}
+    
+    \begin{center}
+    \input{tables/impact_conforming_market_narrower.tex}
+    \end{center}
+    
+\end{sidewaystable}
+
+\end{document}
