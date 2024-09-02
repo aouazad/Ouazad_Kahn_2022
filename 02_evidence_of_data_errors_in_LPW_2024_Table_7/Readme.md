@@ -8,11 +8,12 @@ There are two parts that analyze the RFS Dataverse code of LLPW 2024. First, the
 
 Second, this folder shows that the code has a hardcoded script that manipulates the data in 3 ways not performed by Ouazad and Kahn (2022). First, it excludes a selected set of ZIP codes that are part of the treatment group. ZIP codes excluded include areas in Southern Louisiana affected by Hurricane Katrina, and areas of Miami, Florida, affected by multiple hurricanes during the time period. Second, it hardcodes the duplication of observations from selected counties. Third, it hardcodes the removal of a specific lender. 
 
-This is done on lines 140 to 143 of the script 02_generateRegressionSample.m,
+This is done on **lines 140 to 143 of the script 02_generateRegressionSample.m,**
 > opts = detectImportOptions('excluded_ZIPs.xlsx');
 > opts = setvartype(opts,'ZCTA5CE10','char');
 > exclZips = readtable('excluded_ZIPs.xlsx',opts); joinedTableCombined(ismember(joinedTableCombined.ZCTA5CE10,exclZips.ZCTA5CE10),:) = [];
-The code also excludes one specific lender, Ditech.
+
+The code also **excludes one specific lender, Ditech.**
 > joinedTableCombined(strcmp(joinedTableCombined.respondent_id, '41-1795868')&joinedTableCombined.as_of_year==2014,:) = [];
 
 We then show that the RFS Dataverse archive for Ouazad and Kahn (2022) does not perform any of these arbitrary operations. 
