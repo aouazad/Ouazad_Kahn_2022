@@ -20,7 +20,7 @@ The second and third folders analyze the data of LLPW (2024) and find evidence o
 
 This downloads the RFS Dataverse of August 2023 for LLPW (2024) and shows that:
 
-1. the code produces an estimation sample with large amounts of 'NaN' values for the high_cost variable, which should be a county-specific dummy variable for high-cost counties. This is an issue because the join between mortgage applications and conforming loan limits relies on this variable, as does the regression. This affects specifically Table 7 of the LLPW comment. This is done in 01_errors_in_coding_of_high_cost_dummy.R
+1. the LLPW code produces an estimation sample with **large amounts of 'NaN' values for the high_cost variable,** which should be a county-specific dummy variable for high-cost counties. This is an issue because the join between mortgage applications and conforming loan limits relies on this variable, as does the regression. This affects **only Table 7 of the LLPW comment**, which is the table that tests robustness. This is done in 01_errors_in_coding_of_high_cost_dummy.R
 2. the LLPW code **arbitrarily** excludes 20 ZIPs and 1 lender (Ditech) in the file 02_generateRegressionSample.m. These ZIPs and this lender are present in Ouazad and Kahn (2022), which never performs an arbitrary exclusion of data. The code verifies this by downloading the Ouazad and Kahn (2022) Dataverse automatically and checking this is the case.
 
 > 03_flaws_in_the_independent_replication_table_8
