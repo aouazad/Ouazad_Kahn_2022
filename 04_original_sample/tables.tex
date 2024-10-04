@@ -1,0 +1,32 @@
+\documentclass{article}
+
+\usepackage{rotating}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{caption, subcaption}
+\usepackage{hyperref}
+\usepackage{tocloft}
+
+\begin{document}
+
+\begin{sidewaystable}
+                    
+    \caption{Regression on 2021 Sample --- Windows of 20, 10, 5\%}
+
+    \begin{center}
+    \input{tables/impact_conforming_market.tex}
+    \end{center}
+                    
+\end{sidewaystable}
+
+\begin{sidewaystable}
+                    
+    \caption{Regression on 2021 Sample --- Narrower Windows of 4, 3, 2\%}
+
+    \begin{center}
+    \input{tables/impact_conforming_market_narrower.tex}
+    \end{center}
+                    
+\end{sidewaystable}
+
+\end{document}
