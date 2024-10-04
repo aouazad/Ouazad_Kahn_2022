@@ -1,0 +1,66 @@
+\documentclass{article}
+
+\usepackage{rotating}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{caption, subcaption}
+\usepackage{hyperref}
+\usepackage{tocloft}
+
+\begin{document}
+
+\begin{table}
+
+\caption{Linear Tests of Post-Hurricane Treatment Effects: Approval Rates}
+
+\emph{The linear hypothesis is:}
+$$ \textrm{Below Limit} \times \textrm{Treated} \times \textrm{Time +1} = \dots = \textrm{Below Limit} \times \textrm{Treated} \times \textrm{Time +4} = 0$$
+\emph{The \textbf{pvalue} accounting for double clustering by ZIP and year is below each statistic.}
+
+\begin{center}
+\input{tables/linear_tests_approved.tex}
+\end{center}
+
+\emph{Test statistic and clustered (5-digit Zip Code \& year) pvalues}
+         
+\emph{Signif. Codes: ***: 0.01, **: 0.05, *: 0.1}
+
+\end{table}
+
+\begin{table}
+
+    \caption{Linear Tests of Post-Hurricane Treatment Effects: Origination Rates}
+    
+    \emph{The linear hypothesis is:}
+    $$ \textrm{Below Limit} \times \textrm{Treated} \times \textrm{Time +1} = \dots = \textrm{Below Limit} \times \textrm{Treated} \times \textrm{Time +4} = 0$$
+    \emph{The \textbf{pvalue} accounting for double clustering by ZIP and year is below each statistic.}
+    
+    \begin{center}
+    \input{tables/linear_tests_originated.tex}
+    \end{center}
+    
+    \emph{Test statistic and clustered (5-digit Zip Code \& year) pvalues}
+     
+    \emph{Signif. Codes: ***: 0.01, **: 0.05, *: 0.1}
+
+    \end{table}
+
+\begin{table}
+
+        \caption{Linear Tests of Post-Hurricane Treatment Effects: Securitization Conditional on Origination Rates}
+        
+        \emph{The linear hypothesis is:}
+        $$ \textrm{Below Limit} \times \textrm{Treated} \times \textrm{Time +1} = \dots = \textrm{Below Limit} \times \textrm{Treated} \times \textrm{Time +4} = 0$$
+        \emph{The \textbf{pvalue} accounting for double clustering by ZIP and year is below each statistic.}
+        
+        \begin{center}
+        \input{tables/linear_tests_securitized.tex}
+        \end{center}
+        
+        \emph{Test statistic and clustered (5-digit Zip Code \& year) pvalues}
+         
+        \emph{Signif. Codes: ***: 0.01, **: 0.05, *: 0.1}
+
+\end{table}
+        
+\end{document}

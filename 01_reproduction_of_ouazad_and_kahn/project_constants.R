@@ -60,3 +60,26 @@ slim_fixest <- function(regdf, depvar) {
   regdf
 
 }
+
+format_pvalue <- function(p, digits = 3) {
+  formatted <- sprintf(paste0("%.", digits, "f"), p)
+  stars <- case_when(
+    p < 0.01 ~ "***",
+    p < 0.05 ~ "**",
+    p < 0.1 ~ "*",
+    TRUE ~ ""
+  )
+  paste0(formatted, stars)
+}
+
+
+
+# Define a custom sanitize function
+my_sanitize <- function(str) {
+  result <- str
+  result <- gsub("&", "\\&", result)
+  result <- gsub("<", "\\textless{}", result)
+  result <- gsub(">", "\\textgreater{}", result)
+  result <- gsub("%", "\\%", result)
+  return(result)
+}
