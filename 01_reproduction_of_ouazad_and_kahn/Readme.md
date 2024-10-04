@@ -1,7 +1,7 @@
 
 # Replication of Ouazad and Kahn (2022) 
 
-The first step is to download the data using one of the three shell scripts. You can then execute the R scripts. If you use download_estimation_samples.sh, you can go straight to 06_main_regression.R, which generates the regression tables.
+The first step is to download the data using one of the three shell scripts. You can then execute the R scripts. If you use download_estimation_samples.sh, you can go straight to 06_main_regression.R, which generates the regression tables. You can also run 07_ to 20_ using this shell script first.
 
 ## Files
 
@@ -43,20 +43,35 @@ impact_conforming_market.tex for windows +-20%, +-10%, +-5% around the conformin
 
 impact_conforming_market_narrower.tex for windows +-4%, +-3%, +-2% around the conforming loan limit.
 
+> 07_specification_tests_OLS.R
+
+Performs the OLS regression Diff-in-Diff, i.e. with Treated, Below Limit x Treated, Below Limit, Below Limit x Time x Treated, Time x Treated.
+
+The following files estimate regressions with increasing levels of controls.
+
+> 08_specification_tests_2wfe.R
+
+Introduces ZIP, year, and below limit x year controls.
+
+> 09_specification_tests_agency.R
+
+Add agency fixed effects to 06
+
+The other files add controls one by one.
+
 ## Folders
 
 The folder limits/ has the conforming loan limits.
 
-The folder hmda/ stores the raw HMDA files. If you want to build the sample from raw HMDA data, use the script download_raw_hmda.sh and execute the files in sequence of their number.
+The folder hmda/ stores the raw HMDA files. If you want to build the sample from raw HMDA data, use the script download_raw_hmda.sh and execute the files in sequence of their number from 00_1 to 05_ .
 
-The folder external_data/ has data providing additional variables. 
+The folder external_data/ has data providing additional variables used in 05_make_estimation_sample.R. 
 
 The folder output/ stores intermediary files, such as the estimation sample.
 
 The folder tables/ and the folder figures/ store the code's output, automatically generated in 06_main_regression.R.
 
 ## Packages
-
 
 To execute this, you need to have the following packages on your system: tidyverse (2.0.0), fixest (0.11.2), broom (1.0.5), foreign (0.8.86), data.table (1.15.0), gam (1.22.3), lfe (3.0.0), gplots (3.1.3.1). These are available on CRAN and can be installed in R using install.packages. 
 
