@@ -127,12 +127,14 @@ for (depvar in depvar_array) {
 
 }
 
+require(car)
+
 specs <- expand_grid(
         depvar =  c("approved", "originated", "securitized"),
         window = c(0.20, 0.10, 0.05)
 )
 
-lapply(seq_len(nrow(specs)), 
+listregs <- lapply(seq_len(nrow(specs)), 
         function(k) {
         read_rds(sprintf("output/results_%s_%s.rds", 
                                    specs$depvar[k], 
@@ -140,7 +142,28 @@ lapply(seq_len(nrow(specs)),
                                         sprintf("%02.2f", specs$window[k]),
                                         fixed = TRUE)
                                    ))
-    }) %>% etable(keep = c("%below_limit:treated:time_0", 
+    }) 
+    
+pvalues <- sapply(listregs, 
+        function(reg) {
+        linearHypothesis(reg, c("below_limit:treated:time_1=0",
+                                    "below_limit:treated:time_2=0",
+                                    "below_limit:treated:time_3=0",
+                                    "below_limit:treated:time_4=0"),
+                        test = "Chisq")$`Pr(>Chisq)`[2] %>%
+        format_pvalue(digits = 3)
+    })
+
+teststats <- sapply(listregs, 
+        function(reg) {
+        linearHypothesis(reg, c("below_limit:treated:time_1=0",
+                                    "below_limit:treated:time_2=0",
+                                    "below_limit:treated:time_3=0",
+                                    "below_limit:treated:time_4=0"),
+                        test = "Chisq")$Chisq[2]
+    })
+
+listregs %>% etable(keep = c("%below_limit:treated:time_0", 
                            "%below_limit:treated:time_1", 
                            "%below_limit:treated:time_2", 
                            "%below_limit:treated:time_3", 
@@ -165,7 +188,9 @@ lapply(seq_len(nrow(specs)),
                            "as.factor(name_event)" = "Disaster"),
                  headers = list(c("20\\%", "10\\%", "5\\%",
                                "20\\%", "10\\%", "5\\%",
-                               "20\\%", "10\\%", "5\\%"))) %>%
+                               "20\\%", "10\\%", "5\\%")),
+                extralines = list("Post Hurricane joint test" = teststats, 
+                                  "Post Hurricane p-value" = pvalues)) %>%
         write_lines("tables/impact_conforming_market.tex")
 
 specs <- expand_grid(
@@ -173,7 +198,7 @@ specs <- expand_grid(
         window = c(0.04, 0.03, 0.02)
 )
 
-lapply(seq_len(nrow(specs)), 
+listregs <- lapply(seq_len(nrow(specs)), 
         function(k) {
         read_rds(sprintf("output/results_%s_%s.rds", 
                                    specs$depvar[k], 
@@ -181,11 +206,32 @@ lapply(seq_len(nrow(specs)),
                                         sprintf("%02.2f", specs$window[k]),
                                         fixed = TRUE)
                                    ))
-    }) %>% etable(keep = c("%below_limit:treated:time_0", 
+    }) 
+    
+pvalues <- sapply(listregs, 
+        function(reg) {
+        linearHypothesis(reg, c("below_limit:treated:time_1=0",
+                                    "below_limit:treated:time_2=0",
+                                    "below_limit:treated:time_3=0",
+                                    "below_limit:treated:time_4=0"),
+                        test = "Chisq")$`Pr(>Chisq)`[2] %>%
+        format_pvalue(digits = 3)
+    })
+
+teststats <- sapply(listregs, 
+        function(reg) {
+        linearHypothesis(reg, c("below_limit:treated:time_1=0",
+                                    "below_limit:treated:time_2=0",
+                                    "below_limit:treated:time_3=0",
+                                    "below_limit:treated:time_4=0"),
+                        test = "Chisq")$Chisq[2]
+    })
+    
+listregs %>% etable(keep = c("%below_limit:treated:time_0", 
                            "%below_limit:treated:time_1", 
                            "%below_limit:treated:time_2", 
                            "%below_limit:treated:time_3", 
-                           "%below_limit:treated:time_4",  
+                           "%below_limit:treated:time_4", 
                            "%below_limit:time_m4:treated", 
                            "%below_limit:treated:time_m3", 
                            "%below_limit:treated:time_m2"), 
@@ -206,8 +252,11 @@ lapply(seq_len(nrow(specs)),
                            "as.factor(name_event)" = "Disaster"),
                  headers = list(c("4\\%", "3\\%", "2\\%",
                                "4\\%", "3\\%", "2\\%",
-                               "4\\%", "3\\%", "2\\%"))) %>%
+                               "4\\%", "3\\%", "2\\%")),
+                extralines = list("Post Hurricane joint test" = teststats, 
+                                  "Post Hurricane p-value" = pvalues)) %>%
         write_lines("tables/impact_conforming_market_narrower.tex")
+
 
 
 
