@@ -6,13 +6,11 @@ This repository provides three folders.
 
 > 01_reproduction_of_ouazad_and_kahn
 
-This runs the fixed effect regression identical to Ouazad and Kahn (2022) specification 1, using the conforming loan limits from FHFA.
+This runs regressions from difference-in-differences to zip, year, disaster, high cost, agency, high cost x year, below limit x high cost x year controls using the conforming loan limits from FHFA. This shows the coefficient estimates using each set of controls.
 
 Shell scripts download the data automatically from the cloud, R codes prepare the data, and run the regression.
 
 This produces tables.tex, which can be compiled with pdflatex. 
-
-
 
 The second and third folders analyze the data of LLPW (2024) and find evidence of failed joins, and arbitrary data deletion and padding. The folders download data automatically from the RFS Dataverse.
 
