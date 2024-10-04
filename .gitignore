@@ -16,3 +16,13 @@
 *.out
 .DS_Store
 01_reproduction_of_ouazad_and_kahn/external_data/zillow_data_long_by_zip_1996_2019.rds
+.Rhistory
+*.xml
+*.cpg
+*.sbn
+*.sbx
+*.shp.xml
+*.lof
+*.lot
+*.toc
+*.rds
