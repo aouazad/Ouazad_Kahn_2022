@@ -1,0 +1,44 @@
+\begingroup
+\centering
+\begin{tabular}{lccccccccc}
+   \tabularnewline \midrule \midrule
+   Dependent Variables: & \multicolumn{3}{c}{approved} & \multicolumn{3}{c}{originated} & \multicolumn{3}{c}{securitized}\\
+                                                              & 4\%            & 3\%            & 2\%           & 4\%           & 3\%           & 2\%          & 4\%           & 3\%            & 2\% \\    
+   Model:                                                     & (1)            & (2)            & (3)           & (4)           & (5)           & (6)          & (7)           & (8)            & (9)\\  
+   \midrule
+   \emph{Variables}\\
+   Below Conforming Limit $\times$ Time -4 $\times$ Treated   & 0.0147         & 0.0349$^{**}$  & 0.0485        & 0.0471$^{*}$  & 0.0731$^{**}$ & 0.0701$^{*}$ & 0.0264        & 0.0364         & 0.0306\\   
+                                                              & (0.0172)       & (0.0157)       & (0.0287)      & (0.0229)      & (0.0249)      & (0.0344)     & (0.0215)      & (0.0271)       & (0.0337)\\   
+   Below Conforming Limit $\times$ Treated $\times$ Time -3   & 0.0047         & 0.0132         & 0.0042        & 0.0251        & 0.0301        & 0.0158       & -0.0128       & -0.0108        & -0.0070\\   
+                                                              & (0.0199)       & (0.0210)       & (0.0271)      & (0.0351)      & (0.0343)      & (0.0378)     & (0.0296)      & (0.0362)       & (0.0385)\\   
+   Below Conforming Limit $\times$ Treated $\times$ Time -2   & -0.0038        & 0.0013         & -0.0015       & -0.0013       & 0.0059        & 0.0006       & -0.0149       & -0.0157        & -0.0152\\   
+                                                              & (0.0073)       & (0.0107)       & (0.0156)      & (0.0170)      & (0.0155)      & (0.0219)     & (0.0176)      & (0.0211)       & (0.0216)\\   
+   Below Conforming Limit $\times$ Treated $\times$ Time +0   & -0.0009        & 0.0003         & -0.0046       & -0.0028       & 0.0006        & -0.0128      & 0.0105        & 0.0035         & 0.0060\\   
+                                                              & (0.0095)       & (0.0134)       & (0.0140)      & (0.0216)      & (0.0227)      & (0.0257)     & (0.0158)      & (0.0194)       & (0.0220)\\   
+   Below Conforming Limit $\times$ Treated $\times$ Time +1   & 0.0266$^{***}$ & 0.0362$^{***}$ & 0.0360$^{*}$  & 0.0307        & 0.0472$^{**}$ & 0.0447       & 0.0384        & 0.0372         & 0.0526$^{*}$\\   
+                                                              & (0.0078)       & (0.0114)       & (0.0169)      & (0.0176)      & (0.0186)      & (0.0281)     & (0.0278)      & (0.0268)       & (0.0272)\\   
+   Below Conforming Limit $\times$ Treated $\times$ Time +2   & 0.0429$^{**}$  & 0.0471$^{*}$   & 0.0504$^{*}$  & 0.0369$^{**}$ & 0.0407        & 0.0352       & 0.0058        & 0.0024         & 0.0190\\   
+                                                              & (0.0156)       & (0.0228)       & (0.0271)      & (0.0172)      & (0.0233)      & (0.0376)     & (0.0253)      & (0.0245)       & (0.0219)\\   
+   Below Conforming Limit $\times$ Treated $\times$ Time +3   & 0.0566$^{***}$ & 0.0595$^{***}$ & 0.0613$^{**}$ & 0.0557$^{**}$ & 0.0640$^{**}$ & 0.0524       & 0.0687$^{**}$ & 0.0689$^{*}$   & 0.0945$^{**}$\\   
+                                                              & (0.0177)       & (0.0149)       & (0.0220)      & (0.0222)      & (0.0275)      & (0.0313)     & (0.0320)      & (0.0373)       & (0.0369)\\   
+   Below Conforming Limit $\times$ Treated $\times$ Time +4   & 0.0235         & 0.0227         & 0.0285        & 0.0024        & -0.0025       & 0.0021       & 0.1699$^{**}$ & 0.1744$^{***}$ & 0.2021$^{***}$\\   
+                                                              & (0.0360)       & (0.0400)       & (0.0425)      & (0.0438)      & (0.0478)      & (0.0499)     & (0.0585)      & (0.0576)       & (0.0595)\\   
+   Post Hurricane joint test                                  & 28.46          & 26.22          & 10.14         & 9.146         & 9.658         & 3.853        & 13.89         & 17.66          & 19.31\\  
+   Post Hurricane p-value                                     & 0.000***       & 0.000***       & 0.038**       & 0.058*        & 0.047**       & 0.426        & 0.008***      & 0.001***       & 0.001***\\  
+   \midrule
+   \emph{Fixed-effects}\\
+   as.factor(agency)                                          & Yes            & Yes            & Yes           & Yes           & Yes           & Yes          & Yes           & Yes            & Yes\\  
+   as.factor(highcost)                                        & Yes            & Yes            & Yes           & Yes           & Yes           & Yes          & Yes           & Yes            & Yes\\  
+   Year                                                       & Yes            & Yes            & Yes           & Yes           & Yes           & Yes          & Yes           & Yes            & Yes\\  
+   5-digit Zip Code                                           & Yes            & Yes            & Yes           & Yes           & Yes           & Yes          & Yes           & Yes            & Yes\\  
+   Disaster                                                   & Yes            & Yes            & Yes           & Yes           & Yes           & Yes          & Yes           & Yes            & Yes\\  
+   \midrule
+   \emph{Fit statistics}\\
+   Observations                                               & 755,908        & 671,790        & 574,089       & 755,908       & 671,790       & 574,089      & 854,091       & 762,323        & 657,406\\  
+   R$^2$                                                      & 0.06798        & 0.06805        & 0.06770       & 0.06755       & 0.06660       & 0.06546      & 0.14139       & 0.13420        & 0.12682\\  
+   Within R$^2$                                               & 0.00525        & 0.00509        & 0.00546       & 0.00445       & 0.00428       & 0.00447      & 0.03881       & 0.02934        & 0.02308\\  
+   \midrule \midrule
+   \multicolumn{10}{l}{\emph{Clustered (5-digit Zip Code \& year) standard-errors in parentheses}}\\
+   \multicolumn{10}{l}{\emph{Signif. Codes: ***: 0.01, **: 0.05, *: 0.1}}\\
+\end{tabular}
+\par\endgroup
