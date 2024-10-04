@@ -1,0 +1,36 @@
+\documentclass{article}
+
+
+\usepackage{graphicx}
+\usepackage[margin=1in]{geometry}
+\usepackage{listings}
+\lstset{
+basicstyle=\small\ttfamily,
+columns=flexible,
+breaklines=true
+}
+\usepackage{hyperref}
+
+\begin{document}
+
+\begin{table}
+
+\caption{Missing Data in LLPW Table 5}
+
+\begin{center}
+\input{tables/missing_treated_obs_by_state.tex}
+\end{center}
+
+\end{table}
+
+\begin{figure}
+
+\caption{Missing Data in LLPW Table 5 Bunches at the Conforming Loan Limit}
+
+\begin{center}
+\includegraphics[scale=0.5]{figures/missing_observations_bunching.pdf}
+\end{center}
+
+\end{figure}
+
+\end{document}
