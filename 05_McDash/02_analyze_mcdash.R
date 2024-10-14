@@ -17,6 +17,15 @@ dfl <- dfl %>%
               below_limit_rounded = as.numeric(originalloanamount <= loanlimit_rounded),
               diff_log_loan_amount = log(originalloanamount) - log(conforming_loan_limit))
 
+# check that the Jumbo status is attributed before rounding
+
+dfl <- dfl %>%
+    mutate(at_limit = as.numeric(originalloanamount == round_to_nearest_thousand(conforming_loan_limit)))
+
+table(dfl$isjumbo[dfl$at_limit == 1])
+
+# now back to main sample
+
 # Type I and Type II errors
 # These numbers are in the Excel table
 mean(dfl$below_limit_rounded[dfl$isjumbo == 1])
