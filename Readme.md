@@ -29,5 +29,10 @@ Each folder generates a pdf in tables.pdf.
 
 The root folder generates tables.pdf with all tables from the three folders.
 
+> 04_original_sample
+
+> 05_McDash
+
+**Uses McDash's IsJumbo variable, which classifies loans as conforming and jumbo before rounding loan amounts.**
 
 
