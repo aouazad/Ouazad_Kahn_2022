@@ -2,6 +2,7 @@
 
 > Ouazad, A. and Kahn, M.E., 2022. Mortgage finance and climate change: Securitization dynamics in the aftermath of natural disasters. The Review of Financial Studies, 35(8), pp.3617-3665.
 
+
 This repository provides three folders. 
 
 > 01_reproduction_of_ouazad_and_kahn
@@ -34,5 +35,9 @@ The root folder generates tables.pdf with all tables from the three folders.
 > 05_McDash
 
 **Uses McDash's IsJumbo variable, which classifies loans as conforming and jumbo before rounding loan amounts.**
+
+
+[The additional (earlier) repository](https://github.com/aouazad/Mortgage-Securitization-Natural-Disasters-Reply) provides a complementary set of regressions, with regression discontinuities at each distance of the conforming loan limit.
+
 
 
